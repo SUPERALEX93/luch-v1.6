@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>LUCH AI // QUANTUM CORE TERMINAL</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <!-- Leaflet — интерактивные карты (OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- ThreeJS & OrbitControls для математической 3D визуализации (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+    <!-- Всплывающий оверлей Изумрудного Консольного Свечения -->
+    <header class="header">
+        <div class="header-brand"><span class="logo-icon">⚡</span><span><strong>LUCH</strong> // TERMINAL</span></div>
+        <button class="map-toggle" id="mapToggle" onclick="toggleMap()">🗺 Карта</button>
+    </header>
+    <div class="chat-container" id="chatContainer"><div class="message ai">Интегрированные системы готовы. Жду запросов.</div></div>
+
+    <!-- Карта геолокации / навигатора -->
+    <div id="mapPanel">
+        <div id="map"></div>
+        <div class="map-controls">
+            <span class="map-status" id="mapStatus">Геолокация не определена</span>
+            <button class="loc-btn" id="recenterBtn" onclick="centerOnUser()" title="Переместить центр карты на меня">◎</button>
+            <input type="text" id="navDest" placeholder="Куда едем? (адрес или фраза)" autocomplete="off">
+            <button class="btn btn-send" id="navBuildBtn" onclick="buildRoute()">Построить маршрут</button>
+            <button class="btn btn-stop" id="navStopBtn" onclick="stopNavMode()" style="display:none">⏹</button>
+        </div>
+        <div id="navManeuverBanner" class="nav-maneuver" style="display:none">
+            <span id="navManeuverText">Ищем манёвр...</span>
+            <span id="navManeuverDist" class="nav-maneuver-dist"></span>
+        </div>
+    </div>
+    
+    <div class="input-container">
+        <button class="btn btn-mic" id="micToggle" onclick="toggleAlwaysListening()">🎙</button>
+        <div class="input-wrapper">
+            <span class="input-icon">⌨</span>
+            <input type="text" id="userInput" placeholder="Ввод команды..." autocomplete="off" onkeypress="handleKey(event)">
+        </div>
+        <button class="btn btn-send" id="sendBtn" onclick="sendMessage()">></button>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    <!-- UI ЭКРАННОЙ ГОЛОГРАММЫ-ЯДРА 3.0 -->
+    <div id="screensaver-ui">
+        <div id="three-canvas-container"></div>
+        <div class="screensaver-vignette"></div>
+        <div class="holo-status" id="holoStatus">РЕЖИМ: ПОКОЙ</div>
+        <button class="exit-screensaver-btn" onclick="hideScreensaver()">СВЕРНУТЬ ИНТЕРФЕЙС / АНАЛИЗ ДАННЫХ</button>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+ai_env/
+
+# --- Секреты и локальные настройки (НЕ публиковать!) ---
+settings.json
+settings.json.broken
+settings.json.tmp
+memory.txt
+devices.json
+luch-key.pem
+luch-cert.pem
+luch-cert.json
+*.key
+*.pem
+*.p12
+
+# --- Рантайм ---
+logs/
+*.log
+temp.wav
+response.wav
+output_speechbrain.wav
+voice16.wav
+temp/
+
+# --- Модели и веса (качаются отдельно, весят гигабайты) ---
+*.pt
+*.pth
+*.ts
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+*.h5
+*.tflite
+weights/
+pretrained_models/
+models/
+
+# --- Android / Gradle ---
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# --- Прочее ---
+.DS_Store
+*.swp
+.idea/
+
+# --- Биометрия и персональные данные (НЕ публиковать!) ---
+# Эталон голоса владельца и лог фраз, сказанных чужими голосами.
+my_voice_profile.wav
+phrases_not_spoken_in_my_voice.txt
+*.wav

