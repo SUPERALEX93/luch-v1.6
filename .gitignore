@@ -49,7 +49,6 @@ android/build/
 android/app/build/
 android/local.properties
 android/.idea/
-*.apk
 *.aab
 *.ap_
 *.dex
